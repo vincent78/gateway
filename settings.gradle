@@ -1,2 +1,8 @@
-rootProject.name = 'com.fruit'
+rootProject.name = 'gateway'
+
+include(':seed')
+project(':seed').projectDir = new File(settingsDir, 'dependencies/seed')
+
+include(':shovel')
+project(':shovel').projectDir = new File(settingsDir, 'dependencies/shovel')
 

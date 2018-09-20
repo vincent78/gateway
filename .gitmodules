@@ -1,0 +1,8 @@
+[submodule "dependencies/seed"]
+	path = dependencies/seed
+	url = git@gitee.com:vincent78/seed.git
+	branch = 1.0
+[submodule "dependencies/shovel"]
+	path = dependencies/shovel
+	url = git@gitee.com:vincent78/shovel.git
+	branch = 2.0.0
