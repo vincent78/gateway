@@ -1,0 +1,76 @@
+{
+    "name": "adpmanager",
+    "package": "com.fruit.adpmanager",
+    "versionCode": "2.0.0",
+    "versionNumber": 1,
+    "ENV":"debug",
+    "desc": "app deploy platform",
+    "db": {
+        "adpmanager": {
+            "type": "mongodb",
+            "isDefault": true,
+            "content": {
+                "host": "mxd99.vincent78.top",
+                "port": 27017,
+                "db_name": "appManager",
+                "username": "appManager",
+                "password": "moxi123",
+                "useObjectId": true
+            }
+        }
+    },
+    "cache": {
+        "adpmanager": {
+            "type": "redis",
+            "content": {
+                "host": "mxd99.vincent78.top",
+                "port": 6379,
+                "auth": "moxi123",
+                "select": 1
+            }
+        }
+    },
+    "kafka": {
+        "consumer": {
+            "bootstrap.servers": "mxd99.vincent78.top:9092,mxd99.vincent78.top:9093,mxd99.vincent78.top:9094",
+            "group.id":"ip_lottery",
+            "auto.offset.reset":"earliest"
+        },
+        "producer": {
+            "bootstrap.servers": "mxd99.vincent78.top:9092,mxd99.vincent78.top:9093,mxd99.vincent78.top:9094",
+            "acks":"0"
+        }
+    },
+    "oss": {
+        "endpoint":"oss-cn-shenzhen.aliyuncs.com",
+        "accessKeyId":"LTAIaHvWJCsPbIC0",
+        "accessKeySecret":"JwebiUEZsNvG6ZrdfvDTWmhKeXzfQZ",
+        "bucket":"rngx"
+    },
+    "https": {
+        "adpmanager": {
+            "jks":"mx.keystore",
+            "pwd":"moxi123",
+            "path":"/adpmanager",
+            "port": 8085
+        },
+        "Authentication": [
+            "app",
+            "cache",
+            "filter",
+            "upgrade",
+            "user"
+        ]
+    },
+    "uploadRootPath":"file-uploads",
+    "cluster": "cluster.xml",
+    "vertxOptions": {
+        "clustered": false,
+        "clusterHost": "127.0.0.1",
+        "clusterPort": 5800,
+        "groupName": "vincent78-dev",
+        "groupPwd": "vincent78-dev",
+        "maxEventLoopExecuteTime": 60000000000,
+        "maxWorkerExecuteTime": 600000000000
+    }
+}
