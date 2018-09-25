@@ -1,14 +1,13 @@
 {
-    "name": "adpmanager",
-    "package": "com.fruit.adpmanager",
+    "name": "gateway",
+    "package": "com.fruit.gateway",
     "versionCode": "2.0.0",
     "versionNumber": 1,
     "ENV":"debug",
     "desc": "app deploy platform",
     "db": {
-        "adpmanager": {
+        "gateway": {
             "type": "mongodb",
-            "isDefault": true,
             "content": {
                 "host": "mxd99.vincent78.top",
                 "port": 27017,
@@ -20,7 +19,7 @@
         }
     },
     "cache": {
-        "adpmanager": {
+        "gateway": {
             "type": "redis",
             "content": {
                 "host": "mxd99.vincent78.top",
@@ -47,30 +46,51 @@
         "accessKeySecret":"JwebiUEZsNvG6ZrdfvDTWmhKeXzfQZ",
         "bucket":"rngx"
     },
-    "https": {
-        "adpmanager": {
-            "jks":"mx.keystore",
-            "pwd":"moxi123",
-            "path":"/adpmanager",
-            "port": 8085
-        },
-        "Authentication": [
+    "web":{
+        "type":"https",
+        "jks":"mx.keystore",
+        "pwd":"moxi123",
+        "path":"/gateway",
+        "port": 8080,
+        "allowedHeader": [
+            "Access-Control-Request-Method",
+            "Access-Control-Allow-Credentials",
+            "Access-Control-Allow-Origin",
+            "Access-Control-Allow-Headers",
+            "X-PINGARUNER",
+            "Content-Type",
+            "clientId"
+        ],
+        "authentication": [
             "app",
             "cache",
             "filter",
             "upgrade",
             "user"
+        ],
+        "static": [
+            {"path":"/css/*","target":"/css"},
+            {"path":"/img/*","target":"/img"},
+            {"path":"/js/*","target":"/js"}
         ]
     },
     "uploadRootPath":"file-uploads",
-    "cluster": "cluster.xml",
+    "cluster": {
+        "type": "NONE",
+        "FromCluster": false,
+        "conf": {
+            "zookeeperHosts": "mxd99.vincent78.top",
+            "sessionTimeout": 20000,
+            "connectTimeout": 3000,
+            "rootPath": "io.vertx",
+            "confPath": "/io.vertx/vx.api.gateway/conf",
+            "retry": {
+                "initialSleepTime": 100,
+                "intervalTimes": 10000,
+                "maxTimes": 5
+            }
+        }
+    },
     "vertxOptions": {
-        "clustered": false,
-        "clusterHost": "127.0.0.1",
-        "clusterPort": 5800,
-        "groupName": "vincent78-dev",
-        "groupPwd": "vincent78-dev",
-        "maxEventLoopExecuteTime": 60000000000,
-        "maxWorkerExecuteTime": 600000000000
     }
 }
