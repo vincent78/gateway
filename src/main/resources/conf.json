@@ -76,10 +76,10 @@
     },
     "uploadRootPath":"file-uploads",
     "cluster": {
-        "type": "NONE",
+        "type": "zookeeper",
         "FromCluster": false,
         "conf": {
-            "zookeeperHosts": "mxd99.vincent78.top",
+            "zookeeperHosts": "mxd99.vincent78.top:2181",
             "sessionTimeout": 20000,
             "connectTimeout": 3000,
             "rootPath": "io.vertx",
