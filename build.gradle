@@ -4,7 +4,7 @@ plugins {
 
 apply from: "dependencies/seed/common.gradle"
 group = 'com.fruit'
-version = '2.0.0-SNAPSHOT'
+version = '1.0.0-SNAPSHOT'
 description = ""
 
 ext {
