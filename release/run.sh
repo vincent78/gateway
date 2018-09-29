@@ -1,2 +1,2 @@
 #! /bin/bash
-nohup java  -Dlog.home=/data/logs/IPAnalyze  -jar IPAnalyze-1.0-SNAPSHOT.jar  > /data/logs/IPAnalyze/nohup &
+nohup java  -Dlog.home=/tmp/clusterTest  -jar gateway-1.0.0-SNAPSHOT.jar  > /dev/null 2>&1 &

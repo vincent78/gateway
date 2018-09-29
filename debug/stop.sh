@@ -1,5 +1,5 @@
 #!/bin/bash
-tpid=$(cat pip)
+tpid=$(cat pid)
 
 if [ -n "$tpid" ] ;then
    echo $tpid

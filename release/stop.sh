@@ -1,11 +1,10 @@
 #!/bin/bash
-port=8086
+tpid=$(cat pid)
 
-tpid=`netstat -anp |grep $port|awk '{printf $7}'|cut -d/ -f1 `
 if [ -n "$tpid" ] ;then
    echo $tpid
    kill -9 $tpid
    echo 'the process has killed'
 else
-   echo 'the port is not used'
+   echo 'the process is not used'
 fi

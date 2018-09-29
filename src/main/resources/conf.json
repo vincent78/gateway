@@ -94,6 +94,6 @@
     "vertxOptions": {
         "clustered":true,
         "clusterHost":"127.0.0.1",
-        "clusterPort": 10200
+        "clusterPort": 10300
     }
 }
