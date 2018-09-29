@@ -43,4 +43,10 @@ public class GatewayMainVerticle extends ShovelMainVerticle {
         return list;
     }
 
+
+    @EventMethod(SVConstant.EVENT_IP_RECEIVED)
+    public void receiveIP(Message msg) {
+        msg.reply(true);
+    }
+
 }
