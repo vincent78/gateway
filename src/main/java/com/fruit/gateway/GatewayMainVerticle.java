@@ -18,6 +18,8 @@ public class GatewayMainVerticle extends ShovelMainVerticle {
         new MsgIFQueue().thenCompose(SVConstant.EVENT_MONGODB_INIT)
                         .thenCompose(SVConstant.EVENT_REDIS_INIT)
                         .thenCompose(SVConstant.EVENT_KAFKA_CONSUMER_INIT)
+                        .thenCompose(SVConstant.EVENT_HTTP_SERVER_INIT)
+                        .thenCompose(Constant.EVENT_REGIST_SERVICE)
                         .thenCompose(SVConstant.EVENT_STARTREDAY)
                         .whenComplete((obj, e) -> {
                             if (e != null) {
