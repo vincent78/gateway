@@ -51,7 +51,7 @@
         "jks":"mx.keystore",
         "pwd":"moxi123",
         "path":"/gateway",
-        "port": 8080,
+        "port": 10000,
         "allowedHeader": [
             "Access-Control-Request-Method",
             "Access-Control-Allow-Credentials",
@@ -76,7 +76,7 @@
     },
     "uploadRootPath":"file-uploads",
     "cluster": {
-        "type": "zookeeper",
+        "type": "none",
         "FromCluster": false,
         "conf": {
             "zookeeperHosts": "mxd99.vincent78.top:2181",

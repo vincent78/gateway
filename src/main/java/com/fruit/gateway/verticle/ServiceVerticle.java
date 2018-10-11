@@ -6,8 +6,6 @@ import com.fruit.shovel.annotation.EventMethod;
 import com.fruit.shovel.annotation.Verticle;
 import com.fruit.shovel.manager.ClusterConfManager;
 import com.fruit.shovel.manager.WebManager;
-import com.fruit.shovel.model.HttpRouteModel;
-import com.fruit.shovel.model.HttpRouteType;
 import com.fruit.shovel.verticle.VerticleBase;
 import io.vertx.core.eventbus.Message;
 
@@ -19,18 +17,14 @@ public class ServiceVerticle extends VerticleBase {
         WebManager manager = WebManager.getInstance();
         String root = manager.getVirtualPathPrefix();
         //时间戳
-        manager.registServiceRoute(new HttpRouteModel(HttpRouteType.GET
-                , SVConstant.EVENT_TIMESTAMP
-                , root + "/timestamp"
-                , true));
+        manager.registServiceRoute(SVConstant.EVENT_TIMESTAMP, root + "/timestamp");
+
+        //verticle的信息
+        manager.registServiceRoute(SVConstant.EVENT_BASE_VERTICLE_INSTANCE, root + "/vInfo");
 
         if (ClusterConfManager.isClustered()) {
             //查询brokers
-            manager.registServiceRoute(new HttpRouteModel(HttpRouteType.GET
-                    , SVConstant.EVENT_CLUSTER_BROKERS_INFO
-                    , root + "/brokers"
-                    , true));
-
+            manager.registServiceRoute(SVConstant.EVENT_CLUSTER_BROKERS_INFO, root + "/brokers");
         }
         msg.reply(true);
     }
