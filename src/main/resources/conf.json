@@ -3,7 +3,7 @@
     "package": "com.fruit.gateway",
     "versionCode": "2.0.0",
     "versionNumber": 1,
-    "ENV":"debug",
+    "ENV": "debug",
     "desc": "app deploy platform",
     "db": {
         "gateway": {
@@ -32,25 +32,25 @@
     "kafka": {
         "consumer": {
             "bootstrap.servers": "mxd99.vincent78.top:9092,mxd99.vincent78.top:9093,mxd99.vincent78.top:9094",
-            "group.id":"ip_lottery",
-            "auto.offset.reset":"earliest"
+            "group.id": "ip_lottery",
+            "auto.offset.reset": "earliest"
         },
         "producer": {
             "bootstrap.servers": "mxd99.vincent78.top:9092,mxd99.vincent78.top:9093,mxd99.vincent78.top:9094",
-            "acks":"0"
+            "acks": "0"
         }
     },
     "oss": {
-        "endpoint":"oss-cn-shenzhen.aliyuncs.com",
-        "accessKeyId":"LTAIaHvWJCsPbIC0",
-        "accessKeySecret":"JwebiUEZsNvG6ZrdfvDTWmhKeXzfQZ",
-        "bucket":"rngx"
+        "endpoint": "oss-cn-shenzhen.aliyuncs.com",
+        "accessKeyId": "LTAIaHvWJCsPbIC0",
+        "accessKeySecret": "JwebiUEZsNvG6ZrdfvDTWmhKeXzfQZ",
+        "bucket": "rngx"
     },
-    "web":{
-        "type":"https",
-        "jks":"mx.keystore",
-        "pwd":"moxi123",
-        "path":"/gateway",
+    "web": {
+        "type": "https",
+        "jks": "mx.keystore",
+        "pwd": "moxi123",
+        "path": "/gateway",
         "port": 10000,
         "allowedHeader": [
             "Access-Control-Request-Method",
@@ -69,12 +69,21 @@
             "user"
         ],
         "static": [
-            {"path":"/css/*","target":"/css"},
-            {"path":"/img/*","target":"/img"},
-            {"path":"/js/*","target":"/js"}
+            {
+                "path": "/css/*",
+                "target": "/css"
+            },
+            {
+                "path": "/img/*",
+                "target": "/img"
+            },
+            {
+                "path": "/js/*",
+                "target": "/js"
+            }
         ]
     },
-    "uploadRootPath":"file-uploads",
+    "uploadRootPath": "file-uploads",
     "cluster": {
         "type": "none",
         "FromCluster": false,
@@ -92,8 +101,8 @@
         }
     },
     "vertxOptions": {
-        "clustered":true,
-        "clusterHost":"127.0.0.1",
+        "clustered": true,
+        "clusterHost": "127.0.0.1",
         "clusterPort": 10300
     }
 }
