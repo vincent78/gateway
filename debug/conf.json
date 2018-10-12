@@ -1,10 +1,10 @@
 {
     "name": "gateway",
     "package": "com.fruit.gateway",
-    "versionCode": "2.0.0",
+    "versionCode": "1.0.0",
     "versionNumber": 1,
     "ENV": "debug",
-    "desc": "app deploy platform",
+    "desc": "the gateway of shovel",
     "db": {
         "gateway": {
             "type": "mongodb",
@@ -32,7 +32,7 @@
     "kafka": {
         "consumer": {
             "bootstrap.servers": "mxd99.vincent78.top:9092,mxd99.vincent78.top:9093,mxd99.vincent78.top:9094",
-            "group.id": "ip_lottery",
+            "group.id": "testgroup1",
             "auto.offset.reset": "earliest"
         },
         "producer": {
@@ -51,7 +51,7 @@
         "jks": "mx.keystore",
         "pwd": "moxi123",
         "path": "/gateway",
-        "port": 8080,
+        "port": 12010,
         "allowedHeader": [
             "Access-Control-Request-Method",
             "Access-Control-Allow-Credentials",
@@ -102,7 +102,7 @@
     },
     "vertxOptions": {
         "clustered": true,
-        "clusterHost": "127.0.0.1",
-        "clusterPort": 10200
+        "clusterHost": "mxd01.vincent78.top",
+        "clusterPort": 12011
     }
 }

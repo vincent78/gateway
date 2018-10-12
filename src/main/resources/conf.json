@@ -1,7 +1,7 @@
 {
     "name": "gateway",
     "package": "com.fruit.gateway",
-    "versionCode": "2.0.0",
+    "versionCode": "1.0.0",
     "versionNumber": 1,
     "ENV": "debug",
     "desc": "app deploy platform",
@@ -85,7 +85,7 @@
     },
     "uploadRootPath": "file-uploads",
     "cluster": {
-        "type": "none",
+        "type": "zookeeper",
         "FromCluster": false,
         "conf": {
             "zookeeperHosts": "mxd99.vincent78.top:2181",
